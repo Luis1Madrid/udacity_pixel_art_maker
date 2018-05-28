@@ -9,7 +9,7 @@ function makeGrid() {
   var height = document.getElementById("input_height").value;
   var width = document.getElementById("input_width").value;
   const table = document.getElementById("pixel_canvas");
-
+// event prevent default, prevents the original values for being overplaced.
   event.preventDefault();
 
   for (var x = 1; x <= height; x++) {
@@ -21,5 +21,10 @@ function makeGrid() {
       newTr.appendChild(newTd);
     }
   }
+  document.querySelector("#pixel_canvas").addEventListener("click", colorGrid);
+}
 
+function colorGrid(evt) {
+  var color = document.getElementById("colorPicker");
+  evt.target.style.backgroundColor = "red";
 }
