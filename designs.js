@@ -12,6 +12,7 @@ function makeGrid() {
 // event prevent default, prevents the original values for being overplaced.
   event.preventDefault();
 
+//create the table based on inputs from cells
   for (var x = 1; x <= height; x++) {
     var newTr = document.createElement("tr");
     table.appendChild(newTr);
@@ -21,10 +22,11 @@ function makeGrid() {
       newTr.appendChild(newTd);
     }
   }
+  //add listener to the table created.
   document.querySelector("#pixel_canvas").addEventListener("click", colorGrid);
 }
 
 function colorGrid(evt) {
-  var color = document.getElementById("colorPicker");
-  evt.target.style.backgroundColor = "red";
+  var color = document.getElementById("colorPicker").value;
+  evt.target.style.backgroundColor = color;
 }
