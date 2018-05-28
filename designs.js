@@ -1,7 +1,6 @@
 //Javascript makegrid()
 document.querySelector("#submitted").addEventListener("click", makeGrid);
-
-
+document.querySelector("#resetted").addEventListener("click", resetTable);
 
 function makeGrid() {
   //document.body.style.backgroundColor = "red";
@@ -29,4 +28,7 @@ function makeGrid() {
 function colorGrid(evt) {
   var color = document.getElementById("colorPicker").value;
   evt.target.style.backgroundColor = color;
+}
+function resetTable() {
+  document.getElementById("pixel_canvas").innerHTML = "";
 }
